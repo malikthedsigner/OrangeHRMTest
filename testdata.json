@@ -1,0 +1,13 @@
+[
+    {
+        "username": "Admin",
+        "password": "admin123"
+    },
+    {
+        "username": "invalidUser",
+        "password": "invalidPassword"
+    },
+    {
+        "correctUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+    }
+]
