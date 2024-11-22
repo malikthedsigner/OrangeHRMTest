@@ -8,6 +8,28 @@
         "password": "invalidPassword"
     },
     {
+        "desktopHeight" : "1920",
+        "dektopWidth" : "1080"
+    },
+    {
+        "tabletHeight" : "768",
+        "tabletWidth" : "1080"
+    },
+    {
+        "mobileHeight" : "375",
+        "mobileWidth" : "667"
+    },
+    {
         "correctUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
+    },
+    {
+        "adminUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers"
+    },
+    {
+        "leaveUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList"
+    },
+    {
+        "recruitmentUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates"
     }
+   
 ]
