@@ -8,16 +8,16 @@
         "password": "invalidPassword"
     },
     {
-        "desktopHeight" : "1920",
-        "dektopWidth" : "1080"
+        "desktopHeight" : 1920,
+        "desktopWidth" : 1080
     },
     {
-        "tabletHeight" : "768",
-        "tabletWidth" : "1080"
+        "tabletHeight" : 768,
+        "tabletWidth" : 1080
     },
     {
-        "mobileHeight" : "375",
-        "mobileWidth" : "667"
+        "mobileHeight" : 896,
+        "mobileWidth" : 414
     },
     {
         "correctUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"

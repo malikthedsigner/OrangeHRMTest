@@ -22,7 +22,7 @@ test.describe("Login Test Suite", () => {
     test("Login with correct credentials", async ({ page }) => {
 
         const correctCredentials = testData[0];
-        const correctUrlData = testData[2];
+        const correctUrlData = testData[5];
         await loginPage.login(correctCredentials.username, correctCredentials.password);
         await expect(page).toHaveURL(correctUrlData.correctUrl);
 
