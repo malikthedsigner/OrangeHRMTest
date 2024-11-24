@@ -10,6 +10,7 @@ class AdminPage {
         this.employeeStatus = page.locator('div:nth-child(4) > .oxd-input-group > div:nth-child(2) > .oxd-select-wrapper > .oxd-select-text');
         this.resetButton = page.getByRole('button', { name: 'Reset' });
         this.searchButton = page.getByRole('button', { name: 'Search' });
+
         this.addUserButton = page.getByRole('button', { name: ' Add' });
         this.editUser = page.getByRole('row', { name: ' Admin Admin mandaDeepika' }).getByRole('button').nth(1);
 
@@ -21,4 +22,29 @@ class AdminPage {
     }
 
 
+    async addNewUser(){
+
+        await this.addButton.click();
+
+    }
+
+    async searchUserByUsername(username){
+
+        await this.usernameSearch.fill(username)
+        await this.searchButton.click();
+    }
+
+    async searchByEmployeeName(nameOfEmployee){
+
+        await this.employeeName.fill(nameOfEmployee);
+        await this.searchButton.click();
+    }
+
+
+
+    
+
+
 }
+
+module.exports = AdminPage;

@@ -22,3 +22,5 @@ class EditUserAdminPage {
         this.saveButton = page.getByRole('button', { name: 'Save' });
     }
 }
+
+module.exports = EditUserAdminPage;
