@@ -55,6 +55,11 @@ class Dashboard {
         return this.recruitmentButton;
     }
 
+    async adminSwitch(){
+
+       await this.adminButton.click();
+    }
+
 
 }
 

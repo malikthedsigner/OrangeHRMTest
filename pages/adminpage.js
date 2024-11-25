@@ -22,19 +22,19 @@ class AdminPage {
     }
 
 
-    async addNewUser(){
+    addNewUser() {
 
-        await this.addButton.click();
+        return this.addUserButton
 
     }
 
-    async searchUserByUsername(username){
+    async searchUserByUsername(username) {
 
         await this.usernameSearch.fill(username)
         await this.searchButton.click();
     }
 
-    async searchByEmployeeName(nameOfEmployee){
+    async searchByEmployeeName(nameOfEmployee) {
 
         await this.employeeName.fill(nameOfEmployee);
         await this.searchButton.click();
@@ -42,7 +42,7 @@ class AdminPage {
 
 
 
-    
+
 
 
 }
