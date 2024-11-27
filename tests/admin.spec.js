@@ -2,7 +2,7 @@ const AdminPage = require('../pages/adminpage');
 const { test, expect } = require('@playwright/test')
 const LoginPage = require('../pages/loginpage');
 const DashboardPage = require('../pages/dashboardpage');
-const AddUserAdminPage = require ('../pages/adduseradminpage');
+const AddUserAdminPage = require('../pages/adduseradminpage');
 
 test.describe("Admin Test Suite", () => {
 
@@ -11,6 +11,9 @@ test.describe("Admin Test Suite", () => {
     let adminPage;
     let dashboardPage;
     let addUserAdminPage;
+    let rowCount
+    let lastRow
+
 
 
     test.beforeEach("Login to App", async ({ page }) => {
@@ -20,7 +23,7 @@ test.describe("Admin Test Suite", () => {
         await loginPage.login("Admin", "admin123");
         dashboardPage = new DashboardPage(page);
         await dashboardPage.adminSwitch();
-        
+
     })
 
 
@@ -30,17 +33,22 @@ test.describe("Admin Test Suite", () => {
         await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
     })
 
-    test ("Add User with Valid Details", async ({page}) => {
+    test.only("Add User with Valid Details", async ({ page }) => {
 
         adminPage = new AdminPage(page);
         await adminPage.addNewUser().click();
         addUserAdminPage = new AddUserAdminPage(page);
-        await addUserAdminPage.addNewUserValid("Rebecca  Harmony","Testrrrrr","Tester001");
-        adminPage = new AdminPage(page);
-        await expect(addUserAdminPage.userListReturner()).toHaveText("Testrrrrr", { timeout: 60000 });
-        
+        await addUserAdminPage.addNewUserValid("Rebecca  Harmony", "Testrrrrrr", "Tester001");
+        dashboardPage = new DashboardPage(page);
+        await dashboardPage.getLastRow();
+        const initialRowCount = await dashboardPage.userListReturner();
+        await expect(dashboardPage.userListReturner()).toEqual(initialRowCount + 1);
+        await expect(await dashboardPage.isUserInLastRow("Testrrrrrr")).toBeVisible();
+        //await console.log(dashboardPage.isUserInLastRow("Testerrrrrr"));
+        await page.pause();
 
-    })
+
+})
 
 
 

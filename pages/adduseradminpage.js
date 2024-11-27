@@ -23,8 +23,6 @@ class AddUserAdminPage {
         this.cancelButton = page.getByRole('button', { name: 'Cancel' });
         this.saveButton = page.getByRole('button', { name: 'Save' });
 
-        this.userList = page.locator("#app > div.oxd-layout.orangehrm-upgrade-layout > div.oxd-layout-container > div.oxd-layout-context > div > div.orangehrm-paper-container > div.orangehrm-container > div > div.oxd-table-body");
-
     }
 
 
@@ -43,11 +41,7 @@ class AddUserAdminPage {
         await this.saveButton.click();
     }
 
-    userListReturner(){
-
-        return this.userList;
-    }
-
+    
 
 }
 

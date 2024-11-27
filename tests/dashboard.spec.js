@@ -56,7 +56,7 @@ test.describe("Dasboard Test Suite", () => {
 
 
 
-    test.only("Responsiveness Test", async ({ page }) => {
+    test("Responsiveness Test", async ({ page }) => {
 
         const desktopSize = testData[2];
         await dashboardPage.settingViewPortSize(desktopSize.desktopWidth, desktopSize.desktopHeight);
@@ -67,8 +67,6 @@ test.describe("Dasboard Test Suite", () => {
         const mobileSize = testData[4];
         await dashboardPage.settingViewPortSize(mobileSize.mobileWidth, mobileSize.mobileHeight);
         await expect(page).toBeTruthy();
-        await page.pause()
-
     })
 
 
