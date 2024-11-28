@@ -20,6 +20,19 @@ class EditUserAdminPage {
 
         this.cancelButton = page.getByRole('button', { name: 'Cancel' });
         this.saveButton = page.getByRole('button', { name: 'Save' });
+
+        this.editedUser = page.getByRole('row', { name: ' lomlifee Admin Rebecca' })
+    }
+
+    async changeUsername(newName){
+
+        await this.username.fill(newName);
+        await this.saveButton.click();
+    }
+
+    editedUserReturner(){
+
+        return this.editedUser
     }
 }
 
