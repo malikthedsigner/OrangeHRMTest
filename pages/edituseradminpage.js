@@ -21,7 +21,7 @@ class EditUserAdminPage {
         this.cancelButton = page.getByRole('button', { name: 'Cancel' });
         this.saveButton = page.getByRole('button', { name: 'Save' });
 
-        this.editedUser = page.getByRole('row', { name: ' lomlifee Admin Rebecca' })
+        this.editedUser = page.getByRole('row', { name: ' loveOfMyLife4 Admin Rebecca' })
     }
 
     async changeUsername(newName){

@@ -36,19 +36,14 @@ test.describe("Admin Test Suite", () => {
         await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
     })
 
-    test.skip ("Add User with Valid Details", async ({ page }) => {
+    test ("Add User with Valid Details", async ({ page }) => {
 
         adminPage = new AdminPage(page);
         await adminPage.addNewUser().click();
         addUserAdminPage = new AddUserAdminPage(page);
         await addUserAdminPage.addNewUserValid("Rebecca  Harmony", "loveOfMyLife", "Tester001");
         dashboardPage = new DashboardPage(page);
-        await dashboardPage.getLastRow();
-        const initialRowCount = await dashboardPage.userListReturner();
-        //await expect(dashboardPage.userListReturner()).toEqual(initialRowCount + 1);
-        //await expect(await dashboardPage.isUserInLastRow("Testrrrrrr")).toBeVisible();
-        //await console.log(dashboardPage.isUserInLastRow("Testerrrrrr"));
-        await page.pause();
+        await expect(await dashboardPage.assertLocator).toBeVisible;
 
 
     })
@@ -69,24 +64,30 @@ test.describe("Admin Test Suite", () => {
     })
 
 
-     test("Search for existing user by username", async({page}) => {
+     test ("Edit and Update User role", async({page}) => {
 
-         adminPage = new AdminPage(page);
-         await adminPage.searchUserByUsername("Heema")
-         await expect(page.getByRole('row', { name: ' Heema ESS Heema L Enabled' })).toBeVisible();
-
-
-     })
-
-     test.only("Edit and Update User role", async({page}) => {
-
+        adminPage = new AdminPage(page);
+        await adminPage.addNewUser().click();
+        addUserAdminPage = new AddUserAdminPage(page);
+        await addUserAdminPage.addNewUserValid("Rebecca  Harmony", "loveOfMyLife4", "Tester001");
         addUserAdminPage = new AddUserAdminPage(page);
         await addUserAdminPage.editUser();
         editUserAdminPage = new EditUserAdminPage(page);
         await editUserAdminPage.changeUsername("lomlifee");
         await expect(editUserAdminPage.editedUserReturner()).toBeVisible ; 
+        page.pause();
 
      })
+
+
+     test ("Search for existing user by username", async({page}) => {
+
+        adminPage = new AdminPage(page);
+        await adminPage.searchUserByUsername("Admin")
+        await expect(page.getByRole('row', { name: ' Admin Admin Pedrito' })).toBeVisible();
+
+
+    })
 
 
 

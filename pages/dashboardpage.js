@@ -13,6 +13,8 @@ class Dashboard {
 
         this.tableContainer = page.locator("div[role='table']");
         this.tableRows = this.tableContainer.locator("div.oxd-table-row.oxd-table-row--with-border");
+
+        this.assertLocator = page.getByRole('row', { name: ' loveOfMyLife Admin Rebecca' })
     }
 
     async settingViewPortSize(width, height) {
@@ -63,9 +65,9 @@ class Dashboard {
         await this.adminButton.click();
     }
 
-    async userListReturner() {
+    async userLocator() {
 
-        return await this.tableRows.count();
+        return await this.assertLocator()
     }
 
     async getLastRow() {
