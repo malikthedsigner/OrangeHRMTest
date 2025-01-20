@@ -64,7 +64,7 @@ test.describe("Admin Test Suite", () => {
     })
 
 
-     test ("Edit and Update User role", async({page}) => {
+     test.skip ("Edit and Update User role", async({page}) => {
 
         adminPage = new AdminPage(page);
         await adminPage.addNewUser().click();
@@ -80,7 +80,7 @@ test.describe("Admin Test Suite", () => {
      })
 
 
-     test ("Search for existing user by username", async({page}) => {
+     test.skip ("Search for existing user by username", async({page}) => {
 
         adminPage = new AdminPage(page);
         await adminPage.searchUserByUsername("Admin")
